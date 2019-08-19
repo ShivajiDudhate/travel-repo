@@ -113,9 +113,7 @@ public class TravelSerciceImpl implements TravelSercice {
          }
         
           
-       if(!custType.equalsIgnoreCase("NonGrataCustomers") && custFevRoute.equals(journey.getRouteName())){
-    	   price = price - (price * (30/100));
-       }
+  
        
        if(!custType.equalsIgnoreCase("NonGrataCustomers") && custFevRoute.equals(journey.getRouteName())){
     	   price = (float) (price - (price * 0.3));
