@@ -69,26 +69,12 @@ public class TravelSerciceImpl implements TravelSercice {
     	
         for(Journey jour: listOfjourneys) {
         	
-        	//Date tsp1  = jour.getStartTime(); 
-        	//Date tsp  = journey.getStartTime();
-        	
-        	  LocalDate now = journey.getStartTime();
-        	 LocalDate sixDaysBehind = jour.getStartTime();
+        	 LocalDate  dateCurrentJourney= journey.getStartTime();
+        	 LocalDate dateLastJourney = jour.getStartTime();
         	 
-        	 Period period = Period.between(now, sixDaysBehind);
+        	 Period period = Period.between(dateCurrentJourney, dateLastJourney);
         	 int diff = period.getDays();
         	
-        	//Calendar myCal = Calendar.getInstance();
-        	
-        	//myCal.setTime(tsp1);
-    
-//        	SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy", Locale.ENGLISH);
-//            Date firstDate = sdf.parse(tsp1.toString());
-//            Date secondDate = sdf.parse(tsp.toString());
-         
-            //long diffInMillies = Math.abs(tsp.getTime() - tsp1.getTime());
-           // int diff = (int) TimeUnit.HOURS.convert(diffInMillies, TimeUnit.MILLISECONDS);
-
         	
         	 if ( diff < 2)
         	 {
