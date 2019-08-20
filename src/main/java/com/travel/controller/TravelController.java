@@ -5,6 +5,7 @@ import javax.xml.ws.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,7 +25,7 @@ public class TravelController {
 	 * @param customer
 	 * @return
 	 */
-	@PostMapping("/customer")
+	@PostMapping(value = "/customer", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
 	public ResponseEntity<String> addCustomer(@Valid @RequestBody Customer customer) {
 		try {
 			travelSercice.addCustomer(customer);
@@ -39,7 +40,7 @@ public class TravelController {
 	 * @param journey
 	 * @return
 	 */
-	@PostMapping("/journey")
+	@PostMapping(value ="/journey", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
 	public ResponseEntity<String> newJourney(@Valid @RequestBody Journey journey) {
 		try {
 			travelSercice.newJourney(journey);

@@ -1,15 +1,10 @@
 package com.travel.service;
 
 import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 
 import javax.transaction.Transactional;
 
@@ -69,7 +64,8 @@ public class TravelSerciceImpl implements TravelSercice {
     	
         for(Journey jour: listOfjourneys) {
         	
-        	 LocalDate  dateCurrentJourney= journey.getStartTime();
+       
+        	  LocalDate dateCurrentJourney = journey.getStartTime();
         	 LocalDate dateLastJourney = jour.getStartTime();
         	 
         	 Period period = Period.between(dateCurrentJourney, dateLastJourney);
@@ -98,9 +94,6 @@ public class TravelSerciceImpl implements TravelSercice {
         	 price = 2f;
          }
         
-          
-  
-       
        if(!custType.equalsIgnoreCase("NonGrataCustomers") && custFevRoute.equals(journey.getRouteName())){
     	   price = (float) (price - (price * 0.3));
        }
